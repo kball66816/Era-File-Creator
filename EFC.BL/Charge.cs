@@ -39,15 +39,15 @@ namespace EFC.BL
             }
         }
 
-        //TODO determine if needed for a loop or segment, interpretations differ depending on 5010 companion
-        //public decimal SumOfChargePaid
-        //{
-        //    get
-        //    {
-        //        decimal total = TotalPaidforCharge+ TotalAddonChargesPaid;
-        //        return total;
-        //    }
-        //}
+        
+        public decimal SumOfChargePaid
+        {
+            get
+            {
+                decimal total = ChargeCost+ TotalAddonChargesPaid;
+                return total;
+            }
+        }
 
         public decimal SumOfChargeCost
         {
