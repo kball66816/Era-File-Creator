@@ -11,7 +11,7 @@ namespace EFC.BL.EDI_Segments
             buildClp.Append(patient.FormattedBillId+ "*");
             buildClp.Append("1" + "*");//CLP02 Claim Status Code 
             buildClp.Append(patient.Charge.SumOfChargeCost+ "*"); //CLP03 Total Claim Charge Amount
-            buildClp.Append(patient.Charge.PaymentAmount + "*");//CLP04 Total Claim Payment Amount
+            buildClp.Append(patient.Charge.SumOfChargePaid + "*");//CLP04 Total Claim Payment Amount
             buildClp.Append(patient.Charge.Copay + "*");//CLP05 Patient Responsibility Amount
             buildClp.Append("12" + "*");//CLP06 Claim Filing Indicator Code
             buildClp.Append("EMC5841338" + "*");//CLP07 Payer Claim Control Number
