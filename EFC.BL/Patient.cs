@@ -99,8 +99,7 @@ namespace EFC.BL
 
         public Patient CopyPatient()
         {
-            Patient clone = new Patient();
-            clone = (Patient)MemberwiseClone();
+            var clone = (Patient)MemberwiseClone();
             clone.billId = string.Empty;
             clone.Charge = new Charge();
             clone.Charge.DateOfService = DateTime.Today;
@@ -111,5 +110,7 @@ namespace EFC.BL
         {
             get { return FirstName + " " + LastName; }
         }
+
+
     }
 }

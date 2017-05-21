@@ -4,8 +4,6 @@ namespace EFC.BL.EDI_Segments
 {
     class Per
     {
-   
-
         public string BuildPerPhone()
         {
             var buildPer = new StringBuilder();

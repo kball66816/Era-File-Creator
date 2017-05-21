@@ -2,7 +2,7 @@
 
 namespace EFC.BL.EDI_Segments
 {
-    class NThree
+    class N3
     {
         public string BuildNThree(InsuranceCompany insurance)
         {

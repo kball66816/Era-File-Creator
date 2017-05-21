@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EFC.BL
+﻿namespace EFC.BL
 {
     public class BillingProvider : Provider
 
@@ -20,7 +13,7 @@ namespace EFC.BL
         public string Name
         {
             get {
-                if (IsAlsoRendering == true)
+                if (IsAlsoRendering)
                 {
                     return FirstName + " " + LastName;
                 }

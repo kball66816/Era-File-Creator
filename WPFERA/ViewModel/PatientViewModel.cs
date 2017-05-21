@@ -108,9 +108,10 @@ namespace WPFERA.ViewModel
 
         private void AddPatient(object obj)
         {
+            UpdateCheckAmount();
             RaisePropertyChanged("CheckAmount");
 
-            if (Settings.ReuseSamePatientEnabled == true)
+            if (Settings.ReuseSamePatientEnabled)
             {
                 GetNewPatientDependentOnUserPromptPreference();
             }
@@ -127,7 +128,7 @@ namespace WPFERA.ViewModel
 
         private void GetNewPatientDependentOnUserPromptPreference()
         {
-            if (Settings.PatientPromptEnabled == true)
+            if (Settings.PatientPromptEnabled)
             {
                 PromptTypeOfNewPatient();
             }
@@ -167,7 +168,7 @@ namespace WPFERA.ViewModel
 
         private void GetNewAddonDependentOnUserPromptPreference()
         {
-            if (Settings.AddonPromptEnabled == true)
+            if (Settings.AddonPromptEnabled)
             {
                 PromptTypeOfNewAddon();
             }
@@ -276,7 +277,6 @@ namespace WPFERA.ViewModel
                 {
                     b = true;
                 }
-                else { b = false; }
             }
             return b;
         }
@@ -316,7 +316,7 @@ namespace WPFERA.ViewModel
         {
             patient.Charge.AddonChargeList.Add(addon);
 
-            if (Settings.ReuseSameAddonEnabled == true)
+            if (Settings.ReuseSameAddonEnabled)
             {
                 GetNewAddonDependentOnUserPromptPreference();
             }
@@ -327,6 +327,8 @@ namespace WPFERA.ViewModel
 
             }
             RaisePropertyChanged("Addon");
+            UpdateCheckAmount();
+            RaisePropertyChanged("CheckAmount");
             RefreshAllCounters();
         }
 
@@ -363,7 +365,7 @@ namespace WPFERA.ViewModel
 
         private void UpdateRenderingProvider(object obj)
         {
-            if(BillingProvider.IsAlsoRendering==true)
+            if(BillingProvider.IsAlsoRendering)
             {
                 patient.Provider.FirstName = BillingProvider.FirstName;
                 patient.Provider.LastName = BillingProvider.LastName;
@@ -393,8 +395,8 @@ namespace WPFERA.ViewModel
             SaveSettings();
             var edi = new ElectronicDataInterchange();
 
-            var Save = new SaveToFile();
-            Save.SaveFile(edi.BuildEdi(patientList.ToList(), insurance, billingProvider));
+            var save = new SaveToFile();
+            save.SaveFile(edi.BuildEdi(patientList.ToList(), insurance, billingProvider));
         }
 
         private void UpdateCheckAmount()
