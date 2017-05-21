@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFC.BL
 {
@@ -13,7 +11,7 @@ namespace EFC.BL
             AddonChargeList = new List<AddonCharge>();
             AdjustmentList = new List<Adjustment>();
             Modifier = new Modifier();
-            Adjustment = new Adjustment();
+            new Adjustment();
             DateOfService = DateTime.Today;
         }
 
@@ -25,7 +23,7 @@ namespace EFC.BL
         {
             get
             {
-                decimal totalCostOfAddon = this.AddonChargeList.Sum(addon => addon.ChargeCost);
+                decimal totalCostOfAddon = AddonChargeList.Sum(addon => addon.ChargeCost);
                 return totalCostOfAddon;
             }
         }

@@ -1,10 +1,7 @@
-﻿using System;
+﻿using EFC.BL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EFC.BL;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace PatientTest
+namespace EFC.BLTests
 {
     [TestClass]
     public class PatientTest
@@ -83,34 +80,6 @@ namespace PatientTest
             //assert
             Assert.AreEqual(actual, patient.FormattedBillId);
 
-        }
-
-        [TestMethod]
-        public void ReturnPatientList()
-        {
-            //arrange
-            string expected = "1";
-            var patient = new Patient()
-            {
-                UsePlatformId = true,
-                FirstName = "Ha",
-                LastName = "Vo",
-                BillId = "100",
-            };
-            var charge = new Charge
-            {
-               
-                PaymentAmount = 50
-            };
-            patient.Charge = charge;
-
-            //act
-            var retrievePatients = new RetrievePatients();
-            retrievePatients.AddPatient(patient);
-            var actual = retrievePatients.CountPatients;
-
-            //assert
-            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]

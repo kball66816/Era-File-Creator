@@ -100,7 +100,7 @@ namespace WPFERA.Services
         public Patient PullDefaultPatient()
         {
             var patient = new Patient();
-            if (Settings.Default.ReloadLastPatient == true)
+            if (Settings.Default.ReloadLastPatient)
             {
                 return LoadPatientFromSettings(patient);
             }

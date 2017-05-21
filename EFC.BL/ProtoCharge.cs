@@ -1,10 +1,6 @@
-﻿using Common.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFC.BL
 {
@@ -15,8 +11,6 @@ namespace EFC.BL
         public List<Adjustment> AdjustmentList { get; set; }
 
         public Modifier Modifier { get; set; }
-
-        public Adjustment Adjustment { get; set; }
 
         private decimal copay;
 

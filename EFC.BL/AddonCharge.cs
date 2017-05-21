@@ -12,7 +12,7 @@ namespace EFC.BL
         {
             AdjustmentList = new List<Adjustment>();
             Modifier = new Modifier();
-            Adjustment = new Adjustment();
+            new Adjustment();
         }
 
         public object Clone()

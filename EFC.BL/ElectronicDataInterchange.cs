@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Text;
+﻿using System.Text;
 using EFC.BL.EDI_Segments;
 using System.Collections.Generic;
 
@@ -42,11 +41,11 @@ namespace EFC.BL
             buildEdi.Append(buildDtm.BuildDtm(patientList));
 
             //Build N1 Insurance Company Identification Segment 1000A
-            var buildNOne = new NOne();
+            var buildNOne = new N1();
             buildEdi.Append(buildNOne.BuildNOne(insurance));
 
             //BuildN3 Insurance Company Identification Segment 1000A
-            var buildNThree = new NThree();
+            var buildNThree = new N3();
             buildEdi.Append(buildNThree.BuildNThree(insurance));
 
             // Build N4 Insurance Company Identification 1000A

@@ -2,7 +2,7 @@
 
 namespace EFC.BL.EDI_Segments
 {
-    public class NOne
+    public class N1
     {
         public string BuildNOne(InsuranceCompany insurance)
         {

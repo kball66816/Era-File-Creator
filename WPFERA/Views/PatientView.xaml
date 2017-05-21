@@ -3,14 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Validation="clr-namespace:Common.Common;assembly=Common.Common"
-             xmlns:ViewModel="clr-namespace:WPFERA.ViewModel"
-             xmlns:local="clr-namespace:WPFERA.Views"
-             x:Class="WPFERA.Views.PatientView"
+             xmlns:validation="clr-namespace:Common.Common;assembly=Common.Common"
+             xmlns:viewModel="clr-namespace:WPFERA.ViewModel"
+    x:Class="WPFERA.Views.PatientView"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="500">
     <UserControl.DataContext>
-        <ViewModel:PatientViewModel/>
+        <viewModel:PatientViewModel/>
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -40,8 +39,8 @@
             </MenuItem>
             <MenuItem Header="View"/>
         </Menu>
-        <StackPanel Grid.Row="3"
-                    Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="2"
+                    Grid.ColumnSpan="2" Grid.Column="0">
             <StatusBar
                 x:Name="StatusBar"
                 VerticalAlignment="Bottom" 
@@ -83,7 +82,7 @@
             x:Name="NavigationBar" 
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            Grid.Row="1"
+            Grid.Row="1" Grid.Column="0"
             TabStripPlacement="Left">
             <TabItem
                 x:Name="LeftInsuranceTab"
@@ -161,7 +160,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="Insurance.Name" UpdateSourceTrigger="LostFocus">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -198,7 +197,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="Insurance.TaxId" UpdateSourceTrigger="LostFocus">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -228,7 +227,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="Insurance.Address.StreetOne" UpdateSourceTrigger="LostFocus">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -247,7 +246,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="Insurance.Address.StreetTwo" UpdateSourceTrigger="LostFocus">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -268,7 +267,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="Insurance.Address.City" UpdateSourceTrigger="LostFocus">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox> 
@@ -296,7 +295,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="Insurance.Address.ZipCode" UpdateSourceTrigger="LostFocus">
                                 <Binding.ValidationRules>
-                                    <Validation:ZipCodeValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:ZipCodeValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -321,7 +320,7 @@
                         <TextBlock x:Name="BillingProviderLastNameTag"                                          
                                    Margin="0,10,0,0"                                                                
                                    Text="Provider's Last Name"/>
-                        <TextBlock x:Name="BillingProviderNPITag"
+                        <TextBlock x:Name="BillingProviderNpiTag"
                                    Text="Provider's NPI*"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
@@ -373,7 +372,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.Name" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -393,7 +392,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.FirstName" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -413,7 +412,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.LastName" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -434,7 +433,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.Npi" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <Validation:NpivalidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:NpivalidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -453,7 +452,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.Address.StreetOne" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -472,7 +471,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.Address.StreetTwo" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -491,7 +490,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.Address.City" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -519,7 +518,7 @@
                             </Validation.ErrorTemplate>
                             <Binding Path="BillingProvider.Address.ZipCode" UpdateSourceTrigger="LostFocus">
                                 <Binding.ValidationRules>
-                                    <Validation:ZipCodeValidationRule ValidationStep="RawProposedValue"/>
+                                    <validation:ZipCodeValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
@@ -584,7 +583,7 @@
                                     </Validation.ErrorTemplate>
                                     <Binding Path="Patient.FirstName" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                                         <Binding.ValidationRules>
-                                            <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                            <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                         </Binding.ValidationRules>
                                     </Binding>
                                 </TextBox>
@@ -603,7 +602,7 @@
                                     </Validation.ErrorTemplate>
                                     <Binding Path="Patient.LastName" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                                         <Binding.ValidationRules>
-                                            <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                            <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                         </Binding.ValidationRules>
                                     </Binding>
                                 </TextBox>
@@ -723,7 +722,7 @@
                                             </Validation.ErrorTemplate>
                                             <Binding Path="Patient.BillId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                                                 <Binding.ValidationRules>
-                                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                                 </Binding.ValidationRules>
                                             </Binding>
                                         </TextBox>
@@ -742,7 +741,7 @@
                                             </Validation.ErrorTemplate>
                                             <Binding Path="Patient.Charge.ProcedureCode" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                                                 <Binding.ValidationRules>
-                                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                                    <validation:StringValidationRule ValidationStep="RawProposedValue"/>
                                                 </Binding.ValidationRules>
                                             </Binding>
                                         </TextBox>                                        <TextBox x:Name="PrimaryModifierOneInput"
@@ -795,14 +794,14 @@
                                          Width="130"
                                          Height="20"
                                          Margin="10,10,0,0" 
-                                         AutomationProperties.IsRequiredForForm="True" Text="{Binding Patient.Charge.PaymentAmount, StringFormat=\{0:F2\}}"
-                                              >
+                                         Text="{Binding Patient.Charge.PaymentAmount, StringFormat=\{0:F2\}}">
                                             <Validation.ErrorTemplate>
                                                 <ControlTemplate>
-                                                    <StackPanel Orientation="Vertical">
-                                                        <AdornedElementPlaceholder x:Name="PaidValidation"/>
-                                                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
-                                                    </StackPanel>
+                                                    <DockPanel >
+                                                        <Border BorderBrush="Red" BorderThickness="2">
+                                                            <AdornedElementPlaceholder/>
+                                                        </Border>
+                                                    </DockPanel>
                                                 </ControlTemplate>
                                             </Validation.ErrorTemplate>
                                         </TextBox>
@@ -818,8 +817,7 @@
                             <StackPanel Grid.Row="1">
                                 <Expander x:Name="ChargeAdjustments"
                                           IsExpanded="True"
-                                      Grid.Row="1"
-                                              Header="Charge Adjustments"
+                                          Header="Charge Adjustments"
                                               Margin="0,10,0,0" >
                                     <StackPanel Orientation="Horizontal">
                                         <StackPanel Orientation="Vertical">
@@ -1113,7 +1111,17 @@
                                                           Text="{Binding Adjustment.AdjustmentAmount, StringFormat=\{0:F2\}}"
                                                           Width="30"
                                                           Height="22"
-                                                          Margin="5,0,0,0"/>
+                                                          Margin="5,0,0,0">
+                                                    <Validation.ErrorTemplate>
+                                                        <ControlTemplate>
+                                                            <DockPanel >
+                                                                <Border BorderBrush="Red" BorderThickness="2">
+                                                                    <AdornedElementPlaceholder/>
+                                                                </Border>
+                                                            </DockPanel>
+                                                        </ControlTemplate>
+                                                    </Validation.ErrorTemplate>
+                                                </TextBox>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel>
@@ -1493,7 +1501,17 @@
                                                      Text="{Binding AddonAdjustment.AdjustmentAmount, StringFormat=\{0:F2\}}"
                                                      Width="30"
                                                      Height="22"
-                                                     Margin="5,0,0,0"/>
+                                                     Margin="5,0,0,0">
+                                                <Validation.ErrorTemplate>
+                                                    <ControlTemplate>
+                                                        <DockPanel >
+                                                            <Border BorderBrush="Red" BorderThickness="2">
+                                                                <AdornedElementPlaceholder/>
+                                                            </Border>
+                                                        </DockPanel>
+                                                    </ControlTemplate>
+                                                </Validation.ErrorTemplate>
+                                            </TextBox>
                                         </StackPanel>
                                         <StackPanel>
                                             <Button x:Name="AddonAdjustmentButton"
@@ -1508,7 +1526,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </Expander>
-                                <StackPanel Orientation="Horizontal" Grid.Row="4">
+                                <StackPanel Orientation="Horizontal">
                                     <StackPanel Orientation="Vertical">
                                         <TextBlock x:Name="RenderingProviderFirstNameTag"
                                                Text="Provider's First Name*"
@@ -1522,7 +1540,7 @@
                                                VerticalAlignment="Top"
                                                Height="20"
                                                Margin="0,10,0,0"/>
-                                        <TextBlock x:Name="RenderingProviderNPITag"
+                                        <TextBlock x:Name="RenderingProviderNpiTag"
                                                Text="Provider's NPI*"
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Top"
@@ -1571,7 +1589,7 @@
             </TabItem>
             <TabItem IsEnabled="False" Visibility="Hidden">
                 <TabItem.DataContext>
-                    <ViewModel:PreferenceViewModel/>
+                    <viewModel:PreferenceViewModel/>
                 </TabItem.DataContext>
                 <StackPanel>
                     <StackPanel x:Name="PreferencesPanel"
