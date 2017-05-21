@@ -50,8 +50,8 @@ namespace EFC.BL
             buildEdi.Append(buildNThree.BuildNThree(insurance));
 
             // Build N4 Insurance Company Identification 1000A
-            var buildNFour = new NFour();
-            buildEdi.Append(buildNFour.BuildNFour(insurance));
+            var buildNFour = new N4();
+            buildEdi.Append(buildNFour.BuildN4(insurance));
 
             //Build Ref Insurance Company Identification 1000A
             var buildRef = new Ref();
@@ -71,7 +71,7 @@ namespace EFC.BL
             buildEdi.Append(buildNThree.BuildNThree(billingProvider));
 
             //Build N4 Provider Identifier Segment 1000B
-            buildEdi.Append(buildNFour.BuildNFour(billingProvider));
+            buildEdi.Append(buildNFour.BuildN4(billingProvider));
 
             //Build Ref Provider Identifier 1000B
             buildEdi.Append(buildRef.BuildRefAdditionalPayee());
@@ -90,8 +90,8 @@ namespace EFC.BL
                 var buildClp = new Clp();
                 buildEdi.Append(buildClp.BuildClp(patient));
 
-                var buildNmOne = new NmOne();
-                buildEdi.Append(buildNmOne.BuildNmOne(patient));
+                var buildNmOne = new Nm1();
+                buildEdi.Append(buildNmOne.BuildNm1(patient));
 
 
                 //MIA Inpatient Adjudication Information

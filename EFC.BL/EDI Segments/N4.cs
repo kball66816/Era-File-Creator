@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace EFC.BL.EDI_Segments
 {
-    class NFour
+    class N4
     {
-        public string BuildNFour(InsuranceCompany insurance)
+        public string BuildN4(InsuranceCompany insurance)
         {
-            var buildNFour = new StringBuilder();
+            var buildN4 = new StringBuilder();
 
-           buildNFour.Append("N4" + "*");
-           buildNFour.Append(insurance.Address.City + "*"); //N401 Payer City Line
-           buildNFour.Append(insurance.Address.State + "*");     //N402 Payer City Name
-           buildNFour.Append(insurance.Address.ZipCode); // N403 Payer City Zip
-           buildNFour.Append("~");
+           buildN4.Append("N4" + "*");
+           buildN4.Append(insurance.Address.City + "*"); //N401 Payer City Line
+           buildN4.Append(insurance.Address.State + "*");     //N402 Payer City Name
+           buildN4.Append(insurance.Address.ZipCode); // N403 Payer City Zip
+           buildN4.Append("~");
 
-            return buildNFour.ToString();
+            return buildN4.ToString();
         }
-        public string BuildNFour(BillingProvider billingProvider)
+        public string BuildN4(BillingProvider billingProvider)
         {
             var buildNFour = new StringBuilder();
 

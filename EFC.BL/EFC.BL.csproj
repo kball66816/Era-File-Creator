@@ -43,10 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddonCharge.cs" />
-    <Compile Include="AddonManagement.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="Adjustment.cs" />
-    <Compile Include="AdjustmentManagement.cs" />
     <Compile Include="BillingProvider.cs" />
     <Compile Include="Charge.cs" />
     <Compile Include="Preference.cs" />
@@ -58,8 +56,8 @@
     <Compile Include="EDI Segments\Ge.cs" />
     <Compile Include="EDI Segments\Iea.cs" />
     <Compile Include="EDI Segments\Lx.cs" />
-    <Compile Include="EDI Segments\NFour.cs" />
-    <Compile Include="EDI Segments\NmOne.cs" />
+    <Compile Include="EDI Segments\N4.cs" />
+    <Compile Include="EDI Segments\Nm1.cs" />
     <Compile Include="EDI Segments\NThree.cs" />
     <Compile Include="EDI Segments\Per.cs" />
     <Compile Include="EDI Segments\Ref.cs" />
