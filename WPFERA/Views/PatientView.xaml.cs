@@ -29,5 +29,10 @@ namespace WPFERA.Views
         {
             NavigationBar.SelectedIndex = 3;
         }
+
+        private void LeftPatientTab_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -145,12 +145,26 @@
 
                     <StackPanel Orientation="Vertical">
                         <TextBox x:Name="InsuranceCompanyNameInput"
-                                 Text="{Binding Insurance.Name, Mode=TwoWay}"
                                  Width="115"
                                  HorizontalAlignment="Left"  
                                  VerticalAlignment="Top"
                                  Height="20"
-                                 Margin="10,0,0,0"/>
+                                 Margin="10,0,0,0">
+                            <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <DockPanel >
+                                    <Border BorderBrush="Red" BorderThickness="2">
+                                        <AdornedElementPlaceholder/>
+                                    </Border>
+                                </DockPanel>
+                            </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="Insurance.Name" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <ComboBox x:Name="PaymentTypeDropdown"
                                   Height="20"
                                   Width="115"
@@ -169,12 +183,25 @@
                                  Text="{Binding Insurance.CheckAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBox x:Name="InsuranceCompanyTaxIdInput"
                                  Width="115" 
-                                 Text="{Binding Insurance.TaxId}"
                                  HorizontalAlignment="Left"  
                                  VerticalAlignment="Top"
                                  Margin="10,10,0,0"
-                                 Height="20"
-                                 AutomationProperties.IsRequiredForForm="True"/>
+                                 Height="20">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="Insurance.TaxId" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <DatePicker x:Name="CheckDateInput"
                                     SelectedDate="{Binding Insurance.CheckDate}"
                                     HorizontalAlignment="Left"
@@ -184,25 +211,67 @@
                                     Margin="10,10,0,0" 
                                     AutomationProperties.IsRequiredForForm="True"/>
                         <TextBox x:Name="InsuranceStreetLineOneInput"
-                                 Text="{Binding Insurance.Address.StreetOne}"
                                  Width="115"
                                  HorizontalAlignment="Left"  
                                  VerticalAlignment="Top"
                                  Height="20"
                                  Margin="10,30,0,0" 
-                                 AutomationProperties.IsRequiredForForm="True"/>
+                                 AutomationProperties.IsRequiredForForm="True">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="Insurance.Address.StreetOne" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBox x:Name="InsuranceStreetLineTwoInput"
                                  Margin="10,10,0,0"
                                  Height="20"
-                                 Width="115"
-                                 Text="{Binding Insurance.Address.StreetTwo}"/>
+                                 Width="115">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="Insurance.Address.StreetTwo" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBox x:Name="InsuranceCityInput"
                                  Width="115"  
                                  HorizontalAlignment="Left"  
                                  VerticalAlignment="Top"
                                  Margin="10,10,0,0"                                
-                                 Height="20"                                  
-                                 Text="{Binding Insurance.Address.City}"/>
+                                 Height="20">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="Insurance.Address.City" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox> 
                         <ComboBox Margin="10,10,0,0"
                                   Width="115"
                                   ItemsSource="{Binding InsuranceStates}"
@@ -288,24 +357,66 @@
                                   IsChecked="{Binding BillingProvider.IsAlsoRendering, UpdateSourceTrigger=PropertyChanged}"
                                   Command="{Binding UpdateRenderingProviderCommand}"/>
                         <TextBox x:Name="BillingProviderNameInput"
-                                 Text="{Binding BillingProvider.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Width="110"
                                  Height="20"
                                  Margin="10,10,0,0"
                                  IsEnabled="{Binding IsChecked, Converter={StaticResource NotConverter}, ElementName=IsAlsoRendering}"
-                                 AutomationProperties.IsRequiredForForm="True"/>
+                                 AutomationProperties.IsRequiredForForm="True">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="BillingProvider.Name" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBox x:Name="BillingProviderFirstNameInput"                          
-                                 Text="{Binding BillingProvider.FirstName, UpdateSourceTrigger=PropertyChanged}"
                                  Height="20"
                                  Width="110"
                                  Margin="10,10,0,0"
-                                 IsEnabled="{Binding IsChecked, ElementName=IsAlsoRendering}"/>
+                                 IsEnabled="{Binding IsChecked, ElementName=IsAlsoRendering}">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="BillingProvider.FirstName" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBox x:Name="BillingProviderLastNameInput"
                                  IsEnabled="{Binding IsChecked, ElementName=IsAlsoRendering, Mode=TwoWay}"
-                                 Text="{Binding BillingProvider.LastName, UpdateSourceTrigger=PropertyChanged}"
                                  Height="20"
                                  Width="110"
-                                 Margin="10,10,0,0" />
+                                 Margin="10,10,0,0">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="BillingProvider.LastName" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBox x:Name="BillingProviderNpiInput"
                                  Width="110"
                                  Height="20"
@@ -321,28 +432,69 @@
                                     </DockPanel>
                                 </ControlTemplate>
                             </Validation.ErrorTemplate>
-                            <Binding Path="BillingProvider.Npi" UpdateSourceTrigger="LostFocus">
+                            <Binding Path="BillingProvider.Npi" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <Validation:NpivalidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
                         <TextBox x:Name="BillingProviderAddressLineOneInput"
-                                 Text="{Binding BillingProvider.Address.StreetOne}"
                                  Width="115"  
                                  Height="20"
-                                 Margin="10,40,0,0" 
-                                 AutomationProperties.IsRequiredForForm="True"/>
+                                 Margin="10,40,0,0">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="BillingProvider.Address.StreetOne" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBox x:Name="BillingProviderAddressTwoInput"
                                  Margin="10,10,0,0"
                                  Height="20"
-                                 Width="115"
-                                 Text="{Binding BillingProvider.Address.StreetTwo}"/>
+                                 Width="115">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="BillingProvider.Address.StreetTwo" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBox x:Name="BillingProviderCityInput"
                                  Width="115"    
                                  Margin="10,10,0,0"
-                                 Height="20"
-                                 Text="{Binding BillingProvider.Address.City}"/>
+                                 Height="20">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <DockPanel >
+                                        <Border BorderBrush="Red" BorderThickness="2">
+                                            <AdornedElementPlaceholder/>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                            <Binding Path="BillingProvider.Address.City" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <ComboBox x:Name="BillingProviderStateInput" 
                                   Margin="10,10,0,0"
                                   Width="115"
@@ -418,28 +570,55 @@
                                 <CheckBox Margin="10,0,0,0"
                                           IsChecked="{Binding Patient.UsePlatformId}"/>
                                 <TextBox x:Name="PatientFirstNameInput"
-                                         Text="{Binding Patient.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          Width="130"
                                          Margin="10,10,0,0"
-                                         AutomationProperties.IsRequiredForForm="True" 
-                                         Height="20"/>
+                                         Height="20">
+                                    <Validation.ErrorTemplate>
+                                        <ControlTemplate>
+                                            <DockPanel >
+                                                <Border BorderBrush="Red" BorderThickness="2">
+                                                    <AdornedElementPlaceholder/>
+                                                </Border>
+                                            </DockPanel>
+                                        </ControlTemplate>
+                                    </Validation.ErrorTemplate>
+                                    <Binding Path="Patient.FirstName" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                        <Binding.ValidationRules>
+                                            <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
                                 <TextBox x:Name="PatientLastNameInput"
-                                         Text="{Binding Patient.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          Width="130"
                                          Margin="10,10,0,0"
-                                         AutomationProperties.IsRequiredForForm="True" 
-                                         Height="20"/>
+                                         Height="20">
+                                    <Validation.ErrorTemplate>
+                                        <ControlTemplate>
+                                            <DockPanel >
+                                                <Border BorderBrush="Red" BorderThickness="2">
+                                                    <AdornedElementPlaceholder/>
+                                                </Border>
+                                            </DockPanel>
+                                        </ControlTemplate>
+                                    </Validation.ErrorTemplate>
+                                    <Binding Path="Patient.LastName" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                        <Binding.ValidationRules>
+                                            <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
                                 <TextBox x:Name="PatientCopayInput"
                                          Width="130"
                                          Height="20"
                                          Margin="10,10,0,0" 
-                                         AutomationProperties.IsRequiredForForm="True" Text="{Binding Patient.Charge.Copay, StringFormat=\{0:F2\}}">
+                                         Text="{Binding Patient.Charge.Copay, StringFormat=\{0:F2\}}">
                                     <Validation.ErrorTemplate>
                                         <ControlTemplate>
-                                            <StackPanel Orientation="Vertical">
-                                                <AdornedElementPlaceholder x:Name="CopayValidation"/>
-                                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
-                                            </StackPanel>
+                                            <DockPanel >
+                                                <Border BorderBrush="Red" BorderThickness="2">
+                                                    <AdornedElementPlaceholder/>
+                                                </Border>
+                                            </DockPanel>
                                         </ControlTemplate>
                                     </Validation.ErrorTemplate>
                                 </TextBox>
@@ -528,20 +707,45 @@
                                                     Height="20"
                                                     Margin="10,10,0,0" 
                                                     AutomationProperties.IsRequiredForForm="True"/>
-                                        <TextBox x:Name="BillIdInput"
-                                                 Text="{Binding Patient.BillId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                 Width="130"
+                                        <TextBox x:Name="BillIdInput"                                                 Width="130"
                                                  HorizontalAlignment="Left"
                                                  VerticalAlignment="Top"
                                                  Height="20"
-                                                 Margin="10,10,0,0" AutomationProperties.IsRequiredForForm="True"/>
+                                                 Margin="10,10,0,0">
+                                            <Validation.ErrorTemplate>
+                                                <ControlTemplate>
+                                                    <DockPanel >
+                                                        <Border BorderBrush="Red" BorderThickness="2">
+                                                            <AdornedElementPlaceholder/>
+                                                        </Border>
+                                                    </DockPanel>
+                                                </ControlTemplate>
+                                            </Validation.ErrorTemplate>
+                                            <Binding Path="Patient.BillId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                                <Binding.ValidationRules>
+                                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                                </Binding.ValidationRules>
+                                            </Binding>
+                                        </TextBox>
                                         <TextBox x:Name="PrimaryProcedureCodeInput"
-                                                 Text="{Binding Patient.Charge.ProcedureCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                  Width="130"
                                                  Height="20"
-                                                 Margin="10,10,0,0"
-                                                 AutomationProperties.IsRequiredForForm="True"/>
-                                        <TextBox x:Name="PrimaryModifierOneInput"
+                                                 Margin="10,10,0,0">
+                                            <Validation.ErrorTemplate>
+                                                <ControlTemplate>
+                                                    <DockPanel >
+                                                        <Border BorderBrush="Red" BorderThickness="2">
+                                                            <AdornedElementPlaceholder/>
+                                                        </Border>
+                                                    </DockPanel>
+                                                </ControlTemplate>
+                                            </Validation.ErrorTemplate>
+                                            <Binding Path="Patient.Charge.ProcedureCode" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                                <Binding.ValidationRules>
+                                                    <Validation:StringValidationRule ValidationStep="RawProposedValue"/>
+                                                </Binding.ValidationRules>
+                                            </Binding>
+                                        </TextBox>                                        <TextBox x:Name="PrimaryModifierOneInput"
                                                  Text="{Binding Patient.Charge.Modifier.ModifierOne, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                  Width="25"
                                                  HorizontalAlignment="Left"
@@ -576,7 +780,7 @@
                                          Width="130"
                                          Height="20"
                                          Margin="10,10,0,0" 
-                                         AutomationProperties.IsRequiredForForm="True" Text="{Binding Patient.Charge.ChargeCost, StringFormat=\{0:F2\}}">
+                                         Text="{Binding Patient.Charge.ChargeCost, StringFormat=\{0:F2\}}">
                                             <Validation.ErrorTemplate>
                                                 <ControlTemplate>
                                                     <DockPanel >
