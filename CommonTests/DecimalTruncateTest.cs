@@ -50,7 +50,9 @@ namespace CommonTests
         {
             //Arrange
             string textBoxExample = "14.999";
-            decimal.TryParse(textBoxExample, out decimal value);
+
+            decimal value;
+            decimal.TryParse(textBoxExample, out value);
             decimal actual = value.Truncated(2);
 
             //Act
@@ -65,7 +67,9 @@ namespace CommonTests
             //Arrange
             var charge = new Charge();
             string textBoxExample = "14";
-            decimal.TryParse(textBoxExample, out decimal value);
+
+            decimal value;
+            decimal.TryParse(textBoxExample, out value);
             charge.PaymentAmount = value;
             charge.PaymentAmount.Truncated(2);
 
@@ -82,7 +86,8 @@ namespace CommonTests
             //Arrange
             var charge = new Charge();
             string textBoxExample = "";
-            decimal.TryParse(textBoxExample, out decimal value);
+            decimal value;
+            decimal.TryParse(textBoxExample, out value);
             charge.PaymentAmount = value;
             charge.PaymentAmount.Truncated(2);
 

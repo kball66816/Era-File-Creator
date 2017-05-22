@@ -7,8 +7,8 @@ namespace Common.Common
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-
-            if (decimal.TryParse(value.ToString(), out decimal d))
+            decimal d;
+            if (decimal.TryParse(value.ToString(), out d))
             {
                 return new ValidationResult(true, null);
             }

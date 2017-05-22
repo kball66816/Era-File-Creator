@@ -122,7 +122,8 @@ namespace WPFERA.Services
             }
             if (!string.IsNullOrEmpty(Settings.Default.PatientCopay))
             {
-                decimal.TryParse(Settings.Default.PatientCopay, out decimal value);
+                decimal value;
+                decimal.TryParse(Settings.Default.PatientCopay, out value);
                 patient.Charge.Copay = value;
             }
 
