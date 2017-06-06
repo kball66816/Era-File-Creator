@@ -604,7 +604,8 @@
                        Text="Place Of Service*"/>
             <ComboBox ItemsSource="{Binding PlacesOfService}"
                       SelectedValuePath="Value"
-                      SelectedValue="{Binding Patient.Charge.PlaceOfService}"
+                      DisplayMemberPath="Key"
+                      SelectedValue="{Binding Patient.Charge.PlaceOfService.ServiceLocation, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                        HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="8" Grid.Column="3"
