@@ -67,19 +67,19 @@ namespace EFC.BL
 
         private string FormatBillId(string unformattedBillId)
         {
-
+            string formatBillId = string.Empty;
             if (UsePlatformId == false)
 
             {
-                unformattedBillId = "1" + unformattedBillId.PadLeft(10, '0') + ClassicIdConcatination();
+                formatBillId = "1" + unformattedBillId.PadLeft(10, '0') + ClassicIdConcatination();
 
             }
             else if (UsePlatformId == true)
             {
-                unformattedBillId = unformattedBillId + "-1";
+                formatBillId = unformattedBillId;
 
             }
-            return unformattedBillId;
+            return formatBillId;
         }
 
         private string ClassicIdConcatination()

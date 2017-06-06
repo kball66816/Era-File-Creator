@@ -47,6 +47,7 @@
     <Compile Include="Adjustment.cs" />
     <Compile Include="BillingProvider.cs" />
     <Compile Include="Charge.cs" />
+    <Compile Include="PlaceOfService.cs" />
     <Compile Include="Preference.cs" />
     <Compile Include="EDI Segments\Amt.cs" />
     <Compile Include="EDI Segments\Bpr.cs" />

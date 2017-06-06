@@ -24,6 +24,7 @@ namespace WPFERA.ViewModel
 
             patientRepository.Add(Patient);
             PatientList = patientRepository.GetAllPatients();
+            PlacesOfService = Patient.Charge.PlaceOfService.PlacesOfService;
             LoadCommands();
             RefreshAllCounters();
         }
@@ -56,6 +57,8 @@ namespace WPFERA.ViewModel
         public Dictionary<string, string> InsuranceStates { get; set; }
 
         public Dictionary<string, string> PaymentTypes { get; set; }
+
+        public Dictionary<string, string> PlacesOfService { get; set; }
 
         private InsuranceCompany insurance;
 

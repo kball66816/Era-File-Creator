@@ -133,7 +133,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Street One")]
         public string InsuranceCompanyAddressLineOne {
             get {
                 return ((string)(this["InsuranceCompanyAddressLineOne"]));
@@ -145,7 +145,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Street Two")]
         public string InsuranceCompanyAddressLineTwo {
             get {
                 return ((string)(this["InsuranceCompanyAddressLineTwo"]));
@@ -157,7 +157,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("City")]
         public string InsuranceCompanyAddressCity {
             get {
                 return ((string)(this["InsuranceCompanyAddressCity"]));
@@ -169,7 +169,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("AL")]
         public string InsuranceCompanyAddressState {
             get {
                 return ((string)(this["InsuranceCompanyAddressState"]));
@@ -193,7 +193,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Street One")]
         public string BillingProviderAddressLineOne {
             get {
                 return ((string)(this["BillingProviderAddressLineOne"]));
@@ -205,7 +205,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Street Two")]
         public string BillingProviderAddressLineTwo {
             get {
                 return ((string)(this["BillingProviderAddressLineTwo"]));
@@ -217,7 +217,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("City")]
         public string BillingProviderAddressCity {
             get {
                 return ((string)(this["BillingProviderAddressCity"]));
@@ -229,7 +229,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("AL")]
         public string BillingProviderAddressState {
             get {
                 return ((string)(this["BillingProviderAddressState"]));
@@ -241,7 +241,7 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("99999")]
         public int BillingProviderAddressZipCode {
             get {
                 return ((int)(this["BillingProviderAddressZipCode"]));

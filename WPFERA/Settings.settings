@@ -30,34 +30,34 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="InsuranceCompanyAddressLineOne" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Street One</Value>
     </Setting>
     <Setting Name="InsuranceCompanyAddressLineTwo" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Street Two</Value>
     </Setting>
     <Setting Name="InsuranceCompanyAddressCity" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">City</Value>
     </Setting>
     <Setting Name="InsuranceCompanyAddressState" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">AL</Value>
     </Setting>
     <Setting Name="InsuranceCompanyAddressZipCode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="BillingProviderAddressLineOne" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Street One</Value>
     </Setting>
     <Setting Name="BillingProviderAddressLineTwo" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Street Two</Value>
     </Setting>
     <Setting Name="BillingProviderAddressCity" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">City</Value>
     </Setting>
     <Setting Name="BillingProviderAddressState" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">AL</Value>
     </Setting>
     <Setting Name="BillingProviderAddressZipCode" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">99999</Value>
     </Setting>
     <Setting Name="BillingProviderName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

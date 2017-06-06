@@ -13,7 +13,10 @@ namespace EFC.BL
             Modifier = new Modifier();
             new Adjustment();
             DateOfService = DateTime.Today;
+            PlaceOfService = new PlaceOfService();
         }
+
+        public PlaceOfService PlaceOfService { get; set; }
 
         public DateTime DateOfService { get; set; }
 
