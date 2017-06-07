@@ -8,11 +8,15 @@ namespace EFC.BL.EDI_Segments
         {
             var buildClp = new StringBuilder();
             buildClp.Append("CLP*");
-            buildClp.Append(patient.FormattedBillId+ "*");
+            buildClp.Append(patient.FormattedBillId+ "*"); //CLP01 Claim Submitter Identifier
             buildClp.Append("1" + "*");//CLP02 Claim Status Code 
             buildClp.Append(patient.Charge.SumOfChargeCost+ "*"); //CLP03 Total Claim Charge Amount
             buildClp.Append(patient.Charge.SumOfChargePaid + "*");//CLP04 Total Claim Payment Amount
-            buildClp.Append(patient.Charge.Copay + "*");//CLP05 Patient Responsibility Amount
+
+            if(patient.Charge.Copay!=0)
+            {
+                buildClp.Append(patient.Charge.Copay + "*");//CLP05 Patient Responsibility Amount
+            }
             buildClp.Append("12" + "*");//CLP06 Claim Filing Indicator Code
             buildClp.Append("EMC5841338" + "*");//CLP07 Payer Claim Control Number
             buildClp.Append(patient.Charge.PlaceOfService.ServiceLocation);//CLP08 Facility Type Code

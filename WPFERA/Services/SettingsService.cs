@@ -165,42 +165,46 @@ namespace WPFERA.Services
        
         public BillingProvider PullDefaultBillingProvider(BillingProvider billingProvider)
         {
+            billingProvider.IsIndividual = Settings.Default.BillingProviderIsIndividual;
+
             if (!string.IsNullOrEmpty(Settings.Default.BillingProviderFirstName))
             {
                 billingProvider.FirstName = Settings.Default.BillingProviderFirstName;
             }
-            if (Settings.Default.BillingProviderLastName != string.Empty)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderLastName))
             {
                 billingProvider.LastName = Settings.Default.BillingProviderLastName;
             }
-            if (Settings.Default.BillingProviderNpi != string.Empty)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderNpi))
             {
                 billingProvider.Npi = Settings.Default.BillingProviderNpi;
             }
-            if (Settings.Default.BillingProviderName != string.Empty)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderName ))
             {
                 billingProvider.Name = Settings.Default.BillingProviderName;
             }
-            if (Settings.Default.BillingProviderAddressLineOne != string.Empty)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderAddressLineOne))
             {
                 billingProvider.Address.StreetOne = Settings.Default.BillingProviderAddressLineOne;
             }
-            if (Settings.Default.BillingProviderAddressLineTwo != string.Empty)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderAddressLineTwo))
             {
                 billingProvider.Address.StreetTwo = Settings.Default.BillingProviderAddressLineTwo;
             }
-            if (Settings.Default.BillingProviderAddressCity != string.Empty)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderAddressCity))
             {
                 billingProvider.Address.City = Settings.Default.BillingProviderAddressCity;
             }
-            if (Settings.Default.BillingProviderAddressState != string.Empty)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderAddressState))
             {
                 billingProvider.Address.State = Settings.Default.BillingProviderAddressState;
             }
-            if (Settings.Default.BillingProviderAddressZipCode != 0)
+            if (!string.IsNullOrEmpty(Settings.Default.BillingProviderAddressZipCode))
             {
                 billingProvider.Address.ZipCode = Settings.Default.BillingProviderAddressZipCode;
             }
+
+
             return billingProvider;
 
         }
@@ -216,6 +220,7 @@ namespace WPFERA.Services
             Settings.Default.BillingProviderAddressCity = billingProvider.Address.City;
             Settings.Default.BillingProviderAddressState = billingProvider.Address.State;
             Settings.Default.BillingProviderAddressZipCode = billingProvider.Address.ZipCode;
+            Settings.Default.BillingProviderIsIndividual = billingProvider.IsIndividual;
             Settings.Default.Save();
         }
 

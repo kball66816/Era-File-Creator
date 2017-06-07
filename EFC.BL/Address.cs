@@ -32,7 +32,7 @@ namespace EFC.BL
             }
         }
 
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; }
 
         public Dictionary<string, string> States = new Dictionary<string, string>
             {

@@ -13,7 +13,7 @@
         public string Name
         {
             get {
-                if (IsAlsoRendering)
+                if (isIndividual)
                 {
                     return FirstName + " " + LastName;
                 }
@@ -33,6 +33,23 @@
                 }
             }
         }
+
+        private bool isIndividual;
+
+        public bool IsIndividual
+        {
+            get { return isIndividual; }
+            set
+            {
+                if (value != isIndividual)
+                {
+                    isIndividual = value;
+                    RaisePropertyChanged("IsIndividual");
+                }
+
+            }
+        }
+
         private bool isAlsoRendering;
 
         public bool IsAlsoRendering

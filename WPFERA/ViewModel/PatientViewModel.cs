@@ -269,25 +269,32 @@ namespace WPFERA.ViewModel
             patient.Charge.AdjustmentList.Add(Adjustment);
             Adjustment = new Adjustment();
             RaisePropertyChanged("Adjustment");
+            RefreshAllCounters();
         }
 
         private bool CheckIfAddonIsNull()
         {
-            bool b = false;
+            bool checkIfAddonIsNull = false;
             if (patient.Charge.AddonChargeList.Count > 0)
             {
-                if (patient.Charge.AddonChargeList.Last() != null)
-                {
-                    b = true;
-                }
+                checkIfAddonIsNull = CheckifLastAddonIsNull(checkIfAddonIsNull);
             }
-            return b;
+            return checkIfAddonIsNull;
+        }
+
+        private bool CheckifLastAddonIsNull(bool checkIfAddonIsNull)
+        {
+            if (patient.Charge.AddonChargeList.Last() != null)
+            {
+                checkIfAddonIsNull = true;
+            }
+
+            return checkIfAddonIsNull;
         }
 
         private bool CanAddAddonAdjustment(object obj)
         {
-            if (!string.IsNullOrEmpty(addonAdjustment.AdjustmentReasonCode)
-                && !string.IsNullOrEmpty(addonAdjustment.AdjustmentType))
+            if (!string.IsNullOrEmpty(addonAdjustment.AdjustmentReasonCode) && !string.IsNullOrEmpty(addonAdjustment.AdjustmentType))
             {
                 return CheckIfAddonIsNull();
             }
@@ -300,8 +307,13 @@ namespace WPFERA.ViewModel
         private bool CanAddAdjustment(object obj)
         {
             if (Adjustment.AdjustmentReasonCode != null && Adjustment.AdjustmentType != null)
-            { return true; }
-            else { return false; }
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private AddonCharge addon;
@@ -309,8 +321,13 @@ namespace WPFERA.ViewModel
         public AddonCharge Addon
         {
             get { return addon; }
-            set { if (value != addon)
-                { addon = value; RaisePropertyChanged("Addon"); } }
+            set
+            {
+                if (value != addon)
+                {
+                    addon = value; RaisePropertyChanged("Addon");
+                }
+            }
         }
 
         public ICommand AddAddonCommand { get; private set; }
@@ -338,8 +355,13 @@ namespace WPFERA.ViewModel
         private bool CanAddAddon(object obj)
         {
             if (!string.IsNullOrEmpty(Addon.ProcedureCode))
-            { return true; }
-            else { return false; }
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public ICommand SaveFileCommand { get; private set; }

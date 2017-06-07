@@ -41,8 +41,8 @@
     <Setting Name="InsuranceCompanyAddressState" Type="System.String" Scope="User">
       <Value Profile="(Default)">AL</Value>
     </Setting>
-    <Setting Name="InsuranceCompanyAddressZipCode" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="InsuranceCompanyAddressZipCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">99991</Value>
     </Setting>
     <Setting Name="BillingProviderAddressLineOne" Type="System.String" Scope="User">
       <Value Profile="(Default)">Street One</Value>
@@ -56,7 +56,7 @@
     <Setting Name="BillingProviderAddressState" Type="System.String" Scope="User">
       <Value Profile="(Default)">AL</Value>
     </Setting>
-    <Setting Name="BillingProviderAddressZipCode" Type="System.Int32" Scope="User">
+    <Setting Name="BillingProviderAddressZipCode" Type="System.String" Scope="User">
       <Value Profile="(Default)">99999</Value>
     </Setting>
     <Setting Name="BillingProviderName" Type="System.String" Scope="User">
@@ -91,6 +91,12 @@
     </Setting>
     <Setting Name="EnableReuseAddonPrompt" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BillingProviderIsIndividual" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PatientPlaceOfService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">11</Value>
     </Setting>
   </Settings>
 </SettingsFile>

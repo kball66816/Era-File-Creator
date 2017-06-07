@@ -181,10 +181,10 @@ namespace WPFERA {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int InsuranceCompanyAddressZipCode {
+        [global::System.Configuration.DefaultSettingValueAttribute("99991")]
+        public string InsuranceCompanyAddressZipCode {
             get {
-                return ((int)(this["InsuranceCompanyAddressZipCode"]));
+                return ((string)(this["InsuranceCompanyAddressZipCode"]));
             }
             set {
                 this["InsuranceCompanyAddressZipCode"] = value;
@@ -242,9 +242,9 @@ namespace WPFERA {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("99999")]
-        public int BillingProviderAddressZipCode {
+        public string BillingProviderAddressZipCode {
             get {
-                return ((int)(this["BillingProviderAddressZipCode"]));
+                return ((string)(this["BillingProviderAddressZipCode"]));
             }
             set {
                 this["BillingProviderAddressZipCode"] = value;
@@ -380,6 +380,30 @@ namespace WPFERA {
             }
             set {
                 this["EnableReuseAddonPrompt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BillingProviderIsIndividual {
+            get {
+                return ((bool)(this["BillingProviderIsIndividual"]));
+            }
+            set {
+                this["BillingProviderIsIndividual"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
+        public string PatientPlaceOfService {
+            get {
+                return ((string)(this["PatientPlaceOfService"]));
+            }
+            set {
+                this["PatientPlaceOfService"] = value;
             }
         }
     }

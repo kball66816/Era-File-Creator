@@ -7,8 +7,9 @@ namespace Common.Common
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            if(string.IsNullOrEmpty(value.ToString()))
+            if(value.ToString()==null)
             {
+                
                 return new ValidationResult(false, null);
             }
 
