@@ -13,7 +13,7 @@
         mc:Ignorable="d"
         Title="ERA File Creator" Height="auto" Width="auto"
         SizeToContent="WidthAndHeight"
-        MinHeight="600" ResizeMode="CanMinimize"
+        MinHeight="600"
         >
     
     <Grid x:Name="TopGrid">
