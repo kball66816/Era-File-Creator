@@ -11,10 +11,8 @@
         xmlns:Window="clr-namespace:WPFERA.Properties"
         xmlns:views ="clr-namespace:WPFERA.Views"
         mc:Ignorable="d"
-        Title="ERA File Creator" Height="auto" Width="auto"
-        SizeToContent="WidthAndHeight"
-        MinHeight="600"
-        >
+        Title="ERA File Creator"
+        SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
     
     <Grid x:Name="TopGrid">
         <views:TestView x:Name="TestView"/>
