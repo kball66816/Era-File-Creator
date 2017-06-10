@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace EFC.BL
 {
     /// <summary>
     /// Places of Service are codified defined locations that a medical or healthcare service is rendered
     /// </summary>
+    
+    [Serializable]
     public class PlaceOfService : INotifyPropertyChanged
     {
         private string serviceLocation;
@@ -78,7 +81,9 @@ namespace EFC.BL
             {"99","Other Place of Service" }
         };
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)

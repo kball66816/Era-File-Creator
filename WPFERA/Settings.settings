@@ -98,5 +98,8 @@
     <Setting Name="PatientPlaceOfService" Type="System.String" Scope="User">
       <Value Profile="(Default)">11</Value>
     </Setting>
+    <Setting Name="ReuseChargeForNextPatient" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

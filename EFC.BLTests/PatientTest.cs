@@ -20,7 +20,7 @@ namespace EFC.BLTests
 
 
             //act
-            string actual = "100-1";
+            string actual = "100";
             string expected = patient.FormattedBillId;
             //assert
             Assert.AreEqual(actual, expected);

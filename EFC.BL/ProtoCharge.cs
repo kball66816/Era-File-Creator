@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace EFC.BL
 {
@@ -68,6 +70,16 @@ namespace EFC.BL
         public string CountAdjustments
         {
             get { return AdjustmentList.Count.ToString(); }
+        }
+
+        public object Clone()
+        {
+            MemoryStream m = new MemoryStream();
+            BinaryFormatter b = new BinaryFormatter();
+            b.Serialize(m, this);
+            m.Position = 0;
+
+            return (ProtoCharge)b.Deserialize(m);
         }
 
         [field:NonSerialized]

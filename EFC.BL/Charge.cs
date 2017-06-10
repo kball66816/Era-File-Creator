@@ -4,14 +4,15 @@ using System.Linq;
 
 namespace EFC.BL
 {
+    [Serializable]
     public class Charge : ProtoCharge
     {
         public Charge()
         {
+            Id = Guid.NewGuid();
             AddonChargeList = new List<AddonCharge>();
             AdjustmentList = new List<Adjustment>();
             Modifier = new Modifier();
-            new Adjustment();
             DateOfService = DateTime.Today;
             PlaceOfService = new PlaceOfService();
         }
@@ -58,5 +59,7 @@ namespace EFC.BL
                 return totalCost;
             }
         }
+
+        public Guid Id { get; private set; }
     }
 }

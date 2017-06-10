@@ -33,7 +33,7 @@ namespace WPFERATest
             //Act
             Pvm.AddAddonCommand.Execute(true);
             var expected = 100;
-            var actual = Pvm.Patient.Charge.AddonChargeList.Last().ChargeCost;
+            var actual = Pvm.Charge.AddonChargeList.Last().ChargeCost;
             //Assert
 
             Assert.AreEqual(expected, actual);
@@ -67,7 +67,7 @@ namespace WPFERATest
             //Act
             Pvm.AddChargeAdjustmentCommand.Execute(true);
             var expected = 100;
-            var actual = Pvm.Patient.Charge.AdjustmentList.Last().AdjustmentAmount;
+            var actual = Pvm.Charge.AdjustmentList.Last().AdjustmentAmount;
             //Assert
 
             Assert.AreEqual(expected, actual);
@@ -86,7 +86,7 @@ namespace WPFERATest
             pvm.AddAddonCommand.Execute(true);
             pvm.AddAddonChargeAdjustmentCommand.Execute(true);
             var expected = 100;
-            var actual = pvm.Patient.Charge.AddonChargeList.Last().AdjustmentList.Last().AdjustmentAmount;
+            var actual = pvm.Charge.AddonChargeList.Last().AdjustmentList.Last().AdjustmentAmount;
             //Assert
 
             Assert.AreEqual(expected, actual);
@@ -123,6 +123,30 @@ namespace WPFERATest
 
             string expected = null;
             var actual = Pvm.Patient.Provider.FirstName;
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void AddChargeToPatientTest()
+        {
+            //Arrange
+            var Pvm = new PatientViewModel();
+
+            Pvm.Patient.FirstName = "John";
+            Pvm.Patient.LastName = "Smith";
+
+            Pvm.Charge.ProcedureCode = "99215";
+            Pvm.Charge.PlaceOfService.ServiceLocation = "11";
+            //Act
+
+            Charge chargeTest = Pvm.Charge;
+            Patient patientTest = Pvm.Patient;
+            Pvm.AddPatientCommand.Execute(true);
+
+            var expected = chargeTest.Id;
+            var actual = patientTest.Charge.Id;
             //Assert
 
             Assert.AreEqual(expected, actual);

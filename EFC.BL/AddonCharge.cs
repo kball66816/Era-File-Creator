@@ -14,15 +14,5 @@ namespace EFC.BL
             Modifier = new Modifier();
             new Adjustment();
         }
-
-        public object Clone()
-        {
-            MemoryStream m = new MemoryStream();
-            BinaryFormatter b = new BinaryFormatter();
-            b.Serialize(m, this);
-            m.Position = 0;
-
-            return (AddonCharge)b.Deserialize(m);
-        }
     }
 }

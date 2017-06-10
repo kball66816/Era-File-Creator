@@ -406,5 +406,17 @@ namespace WPFERA {
                 this["PatientPlaceOfService"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReuseChargeForNextPatient {
+            get {
+                return ((bool)(this["ReuseChargeForNextPatient"]));
+            }
+            set {
+                this["ReuseChargeForNextPatient"] = value;
+            }
+        }
     }
 }
